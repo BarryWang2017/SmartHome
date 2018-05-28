@@ -1,7 +1,7 @@
-#基于ARC EM处理器的智能家庭托管系统
+# 基于ARC EM处理器的智能家庭托管系统
 [TOC]
 
-##简介  Introduction 
+## 简介  Introduction 
 
 本设计基于ARC EM Starter Kit开发板，完成一个智能家庭托管系统，实现以下功能：
 
@@ -10,9 +10,9 @@
 - 室内生活环境监控，包括温湿度检测、敏感气体检测、PM2.5检测、自适应换气等
 
 所有数据均可以通过WiFi上传到机智云物联网平台，支持手机APP（目前仅支持安卓设备）远程查看和控制。
-##硬件和软件配置  HW/SW Setup 
+## 硬件和软件配置  HW/SW Setup 
 
-###硬件需求：
+### 硬件需求：
 
 |                             硬件                             | 数量 | 说明                                                         |
 | :----------------------------------------------------------: | :--: | :----------------------------------------------------------- |
@@ -33,7 +33,7 @@
 | [5V步进电机及驱动模块](https://detail.tmall.com/item.htm?id=38688094766&spm=a1z09.2.0.0.52ff2e8dVPMtMj&_u=ovrnal8c843) |  1   | 用于驱动水族箱投食装置                                       |
 | [5V小水泵](https://item.taobao.com/item.htm?spm=a1z09.2.0.0.52ff2e8dhF0kKJ&id=7184794953&_u=ovrnal8615b) |  2   | 用于给植物浇水和水族箱水循环增氧                             |
 | [土壤湿度传感器](https://detail.tmall.com/item.htm?id=37365775741&spm=a1z09.2.0.0.52ff2e8dVPMtMj&_u=ovrnal8c3c1) |  1   | 采集植物土壤湿度                                             |
-###软件需求
+### 软件需求
 [ARC GNU Toolchain](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases)
 [embARC Open Software Platform (OSP) 201605](https://github.com/foss-for-synopsys-dwc-arc-processors/embarc_osp) 
 [串口调试助手](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
@@ -54,26 +54,26 @@ EMSK3作为室内生活环境监控子系统的控制中心，负责采集室内
 
 ### 为ESP8266 ESP01-S WiFi模组烧写GAgent固件
 
-####1. 下载ESP8266对应的GAgent固件
+#### 1. 下载ESP8266对应的GAgent固件
 
 
 [下载地址](https://download.gizwits.com/zh-cn/p/92/94)
 
 ![](.\doc\screen\机智云固件下载.png)
 
-####2. 将下载好的GAgent固件解压到本地文件夹
+#### 2. 将下载好的GAgent固件解压到本地文件夹
 
 红色线框框选的文件即为所需固件。
 
 ![](.\doc\screen\GAgent固件.png)
 
-####3. 连接设备硬件
+#### 3. 连接设备硬件
 将ESP8266模块按照如下原理图进行接线，注意GPIO0需要输入低电平，KEY1实现外部复位功能。
 ![](.\doc\screen\ESP8266连接图.png)
 
-####4. 下载烧写软件
+#### 4. 下载烧写软件
 下载地址：https://www.espressif.com/sites/default/files/tools/flash_download_tools_v3.6.4.rar
-####5. 配置烧写软件
+#### 5. 配置烧写软件
 打开下载好的烧写软件，按如下图进行配置。
 ![](.\doc\screen\GAgent烧写配置.png)
 
@@ -91,9 +91,9 @@ EMSK3作为室内生活环境监控子系统的控制中心，负责采集室内
 
 
 
-###编译并运行应用程序
+### 编译并运行应用程序
 
-####编译之前的准备
+#### 编译之前的准备
 
 - 将src文件夹下的三个源代码文件夹复制到`($embARC)\applications\SmartHomeSystem\` (($embARC)为embARC软件包根目录，以embARC201605版本为例)
 
@@ -104,7 +104,7 @@ EMSK3作为室内生活环境监控子系统的控制中心，负责采集室内
 - 将安卓应用`wifidemo.apk`安装在安卓手机或者平板上，用来查看和控制设备。
 
 
-####1. 编译并运行水族箱子系统应用程序
+#### 1. 编译并运行水族箱子系统应用程序
 - 进入Aquarius_subsystem文件夹，根据自己的开发板版本以及处理器型号（**以EMSK V2.1 开发板，em7d处理器为例**）修改Makefile文件。
 
 ![](.\doc\screen\水族箱Makefile修改.png)
@@ -119,7 +119,7 @@ EMSK3作为室内生活环境监控子系统的控制中心，负责采集室内
 
 
 
-####2. 编译并运行植物生存维持子系统应用程序
+#### 2. 编译并运行植物生存维持子系统应用程序
 - 进入Plant_subsystem文件夹，根据自己的开发板版本以及处理器型号（**以EMSK V2.1 开发板，em7d处理器为例**）修改Makefile文件。
 
 ![](.\doc\screen\植物Makefile修改.png)
@@ -132,7 +132,7 @@ EMSK3作为室内生活环境监控子系统的控制中心，负责采集室内
 - 打开安卓设备端机智云APP，绑定设备并进行控制。
 ![](.\doc\screen\植物设备绑定APP.gif)
 
-####3. 编译并运行室内环境监控子系统应用程序
+#### 3. 编译并运行室内环境监控子系统应用程序
 - 进入Room_Env_subsystem文件夹，根据自己的开发板版本以及处理器型号（**以EMSK V2.1 开发板，em7d处理器为例**）修改Makefile文件。
 
 ![](.\doc\screen\室内环境Makefile修改.png)
