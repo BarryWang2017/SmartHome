@@ -130,7 +130,7 @@ EMSK3作为室内生活环境监控子系统的控制中心，负责采集室内
 
 - 使用USB线连接主机和开发板，在CMD或者PowerShell中输入`make run`命令运行目标程序。
 - 打开安卓设备端机智云APP，绑定设备并进行控制。
-![](E:\embARC201605\applications\mySmartHome\GitHub\2018_ARC_competition\doc\screen\植物设备绑定APP.gif)
+![](.\doc\screen\植物设备绑定APP.gif)
 
 ####3. 编译并运行室内环境监控子系统应用程序
 - 进入Room_Env_subsystem文件夹，根据自己的开发板版本以及处理器型号（**以EMSK V2.1 开发板，em7d处理器为例**）修改Makefile文件。
