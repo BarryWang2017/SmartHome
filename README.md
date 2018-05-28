@@ -1,5 +1,4 @@
 # 基于ARC EM处理器的智能家庭托管系统
-[TOC]
 
 ## 简介  Introduction 
 
@@ -35,7 +34,9 @@
 | [土壤湿度传感器](https://detail.tmall.com/item.htm?id=37365775741&spm=a1z09.2.0.0.52ff2e8dVPMtMj&_u=ovrnal8c3c1) |  1   | 采集植物土壤湿度                                             |
 ### 软件需求
 [ARC GNU Toolchain](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases)
+
 [embARC Open Software Platform (OSP) 201605](https://github.com/foss-for-synopsys-dwc-arc-processors/embarc_osp) 
+
 [串口调试助手](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
 
 ### 硬件连接
@@ -69,12 +70,15 @@ EMSK3作为室内生活环境监控子系统的控制中心，负责采集室内
 
 #### 3. 连接设备硬件
 将ESP8266模块按照如下原理图进行接线，注意GPIO0需要输入低电平，KEY1实现外部复位功能。
+
 ![](./doc/screen/ESP8266.png)
 
 #### 4. 下载烧写软件
 下载地址：https://www.espressif.com/sites/default/files/tools/flash_download_tools_v3.6.4.rar
+
 #### 5. 配置烧写软件
 打开下载好的烧写软件，按如下图进行配置。
+
 ![](./doc/screen/GAgent_cfg.png)
 
 #### 6. 烧写操作
@@ -82,9 +86,13 @@ EMSK3作为室内生活环境监控子系统的控制中心，负责采集室内
 步骤一、选择正确的串口，当串口连接成功后，点击如图“START“按钮，出现等待上电同步
 
 ![](./doc/screen/programming_1.png)   ![](./doc/screen/programming_2.png)   ![](./doc/screen/programming_3.png) 
+
 步骤二、将ESP8266进行复位（按下前图所示的KEY1后松开）将会出现如下信息表示模块正在进行烧写。
+
 ![](./doc/screen/programming_4.png) 
+
 步骤三、等待一段时间后，出现“FINISH”字样表示烧写成功。
+
 ![](./doc/screen/programming_5.png) 
 
 更多详细信息请参考[机智云网站介绍](http://docs.gizwits.com/zh-cn/deviceDev/ESP8266串口烧写说明.html)
@@ -115,6 +123,7 @@ EMSK3作为室内生活环境监控子系统的控制中心，负责采集室内
 
 - 使用USB线连接主机和开发板，在CMD或者PowerShell中输入`make run`命令运行目标程序。
 - 打开安卓设备端机智云APP，绑定设备并进行控制。
+
 ![](./doc/screen/APP_1.gif)
 
 
@@ -130,6 +139,7 @@ EMSK3作为室内生活环境监控子系统的控制中心，负责采集室内
 
 - 使用USB线连接主机和开发板，在CMD或者PowerShell中输入`make run`命令运行目标程序。
 - 打开安卓设备端机智云APP，绑定设备并进行控制。
+
 ![](./doc/screen/APP_2.gif)
 
 #### 3. 编译并运行室内环境监控子系统应用程序
@@ -143,4 +153,5 @@ EMSK3作为室内生活环境监控子系统的控制中心，负责采集室内
 
 - 使用USB线连接主机和开发板，在CMD或者PowerShell中输入`make run`命令运行目标程序。
 - 打开安卓设备端机智云APP，绑定设备并进行控制。
+
 ![](./doc/screen/APP_3.gif)
