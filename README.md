@@ -9,6 +9,9 @@
 - 室内生活环境监控，包括温湿度检测、敏感气体检测、PM2.5检测、自适应换气等
 
 所有数据均可以通过WiFi上传到机智云物联网平台，支持手机APP（目前仅支持安卓设备）远程查看和控制。
+
+[作品展示视频](http://v.youku.com/v_show/id_XMzYzMTYyNzY4MA==.html?spm=a2h0k.11417342.searchresults.dtitle)
+
 ## 硬件和软件配置  HW/SW Setup 
 
 ### 硬件需求：
